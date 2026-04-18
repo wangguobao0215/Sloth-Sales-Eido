@@ -1,4 +1,4 @@
-# B2B 销售智能助理 v4.0 - 数据模型参考
+# B2B 销售智能助理 v3.0 - 数据模型参考
 
 ## 数据库路径
 
@@ -14,12 +14,12 @@
 | company_name | TEXT NOT NULL | 公司全称 |
 | city | TEXT | 所在城市 |
 | industry | TEXT | 所属行业 |
-| qualification_tags | TEXT (JSON) | 资质标签 `{"专精特新":true,"规上企业":true,"高新技术":false}` |
+| qualification_tags | TEXT (JSON) | 资质标签 |
 | employee_count_range | TEXT | 人员规模区间 |
-| revenue_last_3_years | TEXT (JSON) | 近三年营收（万元）`[5000,6000,7000]` |
+| revenue_last_3_years | TEXT (JSON) | 近三年营收（万元） |
 | financial_status | TEXT | 良好/一般/预警 |
-| procurement_category | TEXT | 采购品类：工业设备/原材料/物流服务/专业咨询/MRO/软件 |
-| current_solution | TEXT (JSON) | 当前方案（见下方） |
+| procurement_category | TEXT | 采购品类 |
+| current_solution | TEXT (JSON) | 当前方案 |
 | key_contacts | TEXT (JSON) | 联系人数组 |
 | decision_chain | TEXT (JSON) | 决策链数组 |
 | data_source | TEXT | 数据来源 |
@@ -30,32 +30,17 @@
 #### current_solution JSON 结构
 
 ```json
-{
-  "category": "工业设备",
-  "provider": "西门子",
-  "product_name": "XX型号",
-  "adoption_year": 2020,
-  "satisfaction": "一般",
-  "contract_expiry": "2025-06",
-  "notes": "多工厂协同困难"
-}
-```
-
-#### key_contacts JSON 结构
-
-```json
-[{"name":"张三","title":"IT总监","phone":"138xxxx","email":"zhang@co.com","source":"官网"}]
+{"category":"","provider":"","product_name":"","adoption_year":2020,"satisfaction":"","contract_expiry":"2025-06","notes":""}
 ```
 
 #### decision_chain JSON 结构
 
 ```json
-[{"name":"李总","role_type":"经济决策者","influence":5,"attitude":"支持","personal_focus":"预算控制"}]
+[{"name":"","role_type":"经济决策者","influence":5,"attitude":"支持","personal_focus":"预算控制"}]
 ```
 
-- role_type：经济决策者 / 技术评估者 / 使用者 / 采购执行者 / 内线
-- influence：1-5（1最低5最高）
-- attitude：支持 / 中立 / 反对 / 未知
+- role_type：经济决策者/技术评估者/使用者/采购执行者/内线
+- influence：1-5，attitude：支持/中立/反对/未知
 
 ### sales_funnel 销售漏斗表
 
@@ -79,11 +64,7 @@
 #### key_date JSON 结构
 
 ```json
-[
-  {"date":"2025-06-30","event":"报价有效期截止","status":"待处理"},
-  {"date":"2025-07-15","event":"投标文件递交截止","status":"待处理"},
-  {"date":"2025-08-01","event":"首付款到期","status":"待处理"}
-]
+[{"date":"2025-06-30","event":"报价有效期截止","status":"待处理"}]
 ```
 
 #### 漏斗阶段与默认概率
@@ -109,31 +90,18 @@
 | tags | TEXT | 话术标签（逗号分隔） |
 | key_extracted_info | TEXT (JSON) | 结构化提取信息 |
 
-#### key_extracted_info 常见结构
-
-```json
-// 输单记录
-{"lost_to": "用友", "reason": "价格"}
-
-// 竞品提及
-{"competitor": "SAP", "competitor_advantage": "品牌知名度"}
-
-// 预算信号
-{"budget_signal": "明年Q1有预算", "estimated_budget": 50}
-```
-
-### case_library 案例库表
+### case_library 案例库表【v3.0 新增】
 
 | 字段 | 类型 | 说明 |
 |------|------|------|
 | case_id | INTEGER PK | 自增主键 |
 | industry | TEXT | 客户行业 |
-| scale | TEXT | 客户规模（如"500-1000人"） |
+| scale | TEXT | 客户规模 |
 | procurement_category | TEXT | 采购品类 |
-| original_solution | TEXT | 原有方案（如"用友U8 V13.0"） |
+| original_solution | TEXT | 原有方案 |
 | pain_point | TEXT | 核心痛点 |
 | solution | TEXT | 我方方案 |
-| quantifiable_benefit | TEXT | 量化收益（如"关账周期从7天缩短至2天"） |
+| quantifiable_benefit | TEXT | 量化收益 |
 | customer_quote | TEXT | 客户评价引用 |
 
 ### user_preferences 用户偏好表
@@ -141,33 +109,57 @@
 | pref_key | 说明 | 可选值 |
 |----------|------|--------|
 | role | 角色 | 一线销售/销售团队负责人 |
-| product_type | 产品 | 软件/SaaS, 工业设备, 专业服务, 其他 |
+| product_type | 产品 | 软件/SaaS, 工业设备, 专业服务 |
 | methodology | 方法论 | SPIN, BANT, MEDDIC |
 | initialized | 已初始化 | true/false |
 
-## 健康度评分规则
+## 健康度评分详细规则【v3.0 新增】
 
-基础分：70
+基础分：70 分
 
-| 条件 | 加/减分 |
-|------|---------|
+**扣分项：**
+| 条件 | 扣分 |
+|------|------|
 | 距上次跟进 >7天 | -15 |
 | 距上次跟进 >14天 | -30（替代-15） |
 | 无 next_action | -20 |
-| relationship_score 下降 | -10 |
+| relationship_score 近期下降 | -10 |
 | stuck_reason 非空 | -5 |
-| 老旧系统（上线>5年） | +15 |
-| 有预算信号 | +20 |
-| 决策链有"支持"者 | +10 |
-| priority="高" | +5 |
 
-范围限制：0-100
+**加分项：**
+| 条件 | 加分 |
+|------|------|
+| current_solution 存在老旧系统（上线>5年） | +15 |
+| 近期活动有预算信号 | +20 |
+| 决策链中有"支持"态度者 | +10 |
+| priority = "高" | +5 |
 
-## 阻力点诊断框架
+分数范围限制为 0-100。
 
-分析维度：活动停滞（频率/间隔）、决策链阻力（反对者 influence>=3）、竞品威胁、预算缺失、方法论缺口。
+## 阻力点诊断框架【v3.0 新增】
 
-## 协作快照模板
+分析维度：
+
+1. **活动停滞**：最近一次活动距今天数、活动频率趋势
+2. **决策链阻力**：是否存在 attitude="反对" 且 influence>=3 的角色
+3. **竞品威胁**：key_extracted_info 中是否提及竞品
+4. **预算缺失**：是否缺少明确的预算信号
+5. **方法论缺口**：基于选定方法论，哪些关键维度信息缺失
+
+输出格式：
+```
+## 商机阻力诊断：[客户名]
+
+### 可能卡点
+1. [具体卡点描述]
+2. [具体卡点描述]
+
+### 突破建议
+1. [具体可执行的行动建议]
+2. [具体可执行的行动建议]
+```
+
+## 协作快照模板【v3.0 新增】
 
 ```
 客户：[公司名]，[行业]，年营收约[X]万，[资质标签]
@@ -177,30 +169,11 @@
 当前阶段：[漏斗阶段]，预估[X]万，[下一步计划]
 ```
 
-## 角色化沟通关注点
+## 角色化沟通关注点【v3.0 新增】
 
 | 角色 | 关注点 | 话术风格 |
 |------|--------|----------|
-| 经济决策者 | ROI、战略价值、风险控制 | 简洁、数据驱动 |
-| 技术评估者 | 性能、SLA、集成、安全 | 技术深度 |
-| 使用者 | 易用性、培训、日常效率 | 场景化 |
-| 采购执行者 | 价格、条款、交期、资质 | 商务规范 |
-
-## 团队负责人功能参考
-
-团队功能通过 Excel 导入实现多销售数据汇聚：
-1. 各销售定期导出个人数据 Excel
-2. 负责人上传至 Skill，执行"合并团队数据"
-3. Skill 自动去重、合并、生成团队看板
-
-**销售预测分级规则：**
-- Commit（承诺）：商务谈判阶段 + 健康分>70
-- Best Case（最佳情况）：方案演示阶段 + 健康分>50
-- Pipeline（管道）：其余活跃商机
-
-**销售能力五维度：**
-- 获客能力：月新增线索数
-- 推进能力：阶段推进次数/活跃商机数
-- 关单能力：赢单率
-- 活动量：月均活动记录数
-- 关系维护：平均 relationship_score
+| 经济决策者 | ROI、战略价值、风险控制 | 简洁、数据驱动、战略视角 |
+| 技术评估者 | 性能、SLA、集成、安全 | 技术深度、对比数据 |
+| 使用者 | 易用性、培训、日常效率 | 场景化、实操导向 |
+| 采购执行者 | 价格、条款、交期、资质 | 商务规范、合规导向 |

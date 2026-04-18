@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""B2B 销售智能助理 v4.0 - 数据库初始化脚本"""
+"""B2B 销售智能助理 v3.0 - 数据库初始化脚本"""
 
 import sqlite3
 import os
@@ -73,7 +73,7 @@ def init_database():
     )
     """)
 
-    # 案例库表
+    # 案例库表 [v3.0 新增]
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS case_library (
         case_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -98,18 +98,10 @@ def init_database():
 
     conn.commit()
     conn.close()
-
-    print(f"[v4.0] 数据库初始化完成: {DB_PATH}")
-    print("=" * 50)
-    print("表结构:")
-    print("  - customers      客户信息表")
-    print("  - sales_funnel   销售漏斗表")
-    print("  - activity_log   跟进记录表")
-    print("  - case_library   案例库表")
-    print("  - user_preferences 用户偏好表")
-    print("=" * 50)
-    print("v4.0 完整版包含 22+ 项核心能力")
-    print("包括：团队管理、舆情监控、案例匹配、赢单/输单复盘等")
+    print(f"[v3.0] 数据库初始化完成: {DB_PATH}")
+    print("表结构: customers, sales_funnel, activity_log, case_library, user_preferences")
+    print("v3.0 新增: case_library 案例库表")
+    print("v3.0 新增能力: 健康度评分、阻力点诊断、竞品话术、业绩仪表盘、协作快照、角色化沟通")
 
 
 if __name__ == "__main__":

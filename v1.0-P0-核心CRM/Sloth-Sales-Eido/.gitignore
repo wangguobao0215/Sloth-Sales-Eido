@@ -1,0 +1,9 @@
+# B2B Sales AI Skill
+*.db
+*.sqlite
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+.env
+*.log

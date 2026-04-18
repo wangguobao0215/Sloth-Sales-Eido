@@ -1,0 +1,28 @@
+# macOS
+.DS_Store
+._*
+
+# Database files (user-specific)
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment
+.env
+.env.local
+
+# Session logs
+session_logs/
+*.log

@@ -1,4 +1,21 @@
-# B2B 销售智能助理 v4.1（完整版）
+<p align="center">
+  <img src="assets/sloth-avatar-round.png" width="120" />
+</p>
+
+<h1 align="center">Sloth-Sales-Eido</h1>
+
+<p align="center">
+  <strong>B2B 销售智能助理 v4.1（完整版）</strong><br/>
+  覆盖从线索挖掘到赢单复盘的完整销售流程，包含 22+ 项核心能力。
+</p>
+
+<p align="center">
+  <img src="assets/qrcode.jpg" width="140" /><br/>
+  <sub>扫码关注 <strong>树懒老K</strong> · 获取更多 AI 技能</sub><br/>
+  <em>慢一点，深一度</em>
+</p>
+
+---
 
 ## 概述
 

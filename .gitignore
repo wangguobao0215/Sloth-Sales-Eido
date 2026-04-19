@@ -26,3 +26,12 @@ __pycache__/
 # Session logs
 session_logs/
 *.log
+
+# 私有文件
+*设计方案*.md
+*评审*.md
+*开发计划*.md
+*参考资料*.md
+*设计文档*.md
+*.private.*
+credentials.*

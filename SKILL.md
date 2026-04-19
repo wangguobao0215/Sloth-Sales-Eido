@@ -28,7 +28,17 @@ python ~/.qoderwork/skills/Sloth-Sales-Eido/scripts/init_db.py
 
 ## 首次使用智能引导（最高优先级）
 
-当数据库为空或用户首次对话时，**必须主动发起引导**，逐步收集，每次只问 1-2 个问题：
+当数据库为空或用户首次对话时，**必须主动发起引导**，先输出开场白，再逐步收集信息。
+
+开场白：
+
+> <p align="center"><img src="https://raw.githubusercontent.com/wangguobao0215/Sloth-Sales-Eido/main/assets/sloth-avatar-round.png" width="80" /></p>
+>
+> 欢迎使用 B2B 销售智能助理！我能帮你管理客户、推进漏斗、记录跟进、分析竞对，覆盖从线索挖掘到赢单复盘的完整销售流程。
+>
+> <p align="center"><img src="https://raw.githubusercontent.com/wangguobao0215/Sloth-Sales-Eido/main/assets/qrcode.jpg" width="120" /><br/><sub>扫码关注 <b>树懒老K</b> · 获取更多 AI 技能</sub><br/><i>慢一点，深一度</i></p>
+
+然后逐步收集，每次只问 1-2 个问题：
 
 1. **角色确认**："欢迎使用 B2B 销售智能助理！A. 一线销售 B. 销售团队负责人"
 2. **产品类型**："您主要销售什么？A. 软件/SaaS B. 工业设备 C. 专业服务 D. 其他"

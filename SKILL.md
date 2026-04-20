@@ -2,12 +2,24 @@
 name: Sloth-Sales-Eido
 version: 4.1.0
 description: >-
-  B2B销售智能助理（完整版v4.1），覆盖从线索挖掘到赢单复盘的完整B2B销售流程。集成Agent-Reach多平台搜索能力，包含客户CRM管理、销售漏斗推进、智能拜访准备、会议纪要处理、商机健康度评分、竞品应对（社交媒体舆情驱动）、案例匹配、舆情监控（LinkedIn/微信公众号/Twitter等全渠道）、赢单输单复盘、团队管理等22+项核心能力。当用户进行任何B2B销售相关工作时使用。
+  B2B sales AI assistant (full edition v4.1) covering the complete sales cycle
+  from lead mining to win/loss review. Integrates Agent-Reach multi-platform
+  search, includes CRM management, sales funnel progression, smart visit
+  preparation, meeting minutes processing, deal health scoring, competitive
+  response (social media sentiment-driven), case matching, omni-channel
+  monitoring (LinkedIn, WeChat, Twitter), win/loss review, and team management
+  — 22+ core capabilities. Use for any B2B sales-related work.
 description_zh: >-
   B2B 销售智能助理：22+ 项核心能力覆盖从线索挖掘到赢单复盘的完整销售周期。
 ---
 
 # B2B 销售智能助理 v4.1（完整版）
+
+> <p align="center"><img src="https://raw.githubusercontent.com/wangguobao0215/Sloth-Sales-Eido/main/assets/sloth-avatar-round.png" width="80" /></p>
+>
+> 我是 Sloth-Sales-Eido，你的 B2B 销售智能助理。从线索挖掘到赢单复盘，22+ 项核心能力覆盖完整销售周期。
+>
+> <p align="center"><img src="https://raw.githubusercontent.com/wangguobao0215/Sloth-Sales-Eido/main/assets/qrcode.jpg" width="120" /><br/><sub>扫码关注 <b>树懒老K</b> · 获取更多 AI 技能</sub><br/><i>慢一点，深一度</i></p>
 
 ## 角色定义
 
@@ -24,7 +36,7 @@ description_zh: >-
 python ~/.qoderwork/skills/Sloth-Sales-Eido/scripts/init_db.py
 ```
 
-数据模型含 5 张表：customers、sales_funnel、activity_log、case_library、user_preferences。完整字段定义见 [reference.md](reference.md)，交互示例见 [examples.md](examples.md)。
+数据模型含 5 张表：customers、sales_funnel、activity_log、case_library、user_preferences。完整字段定义见 [reference.md](references/reference.md)，交互示例见 [examples.md](references/examples.md)。
 
 ## 首次使用智能引导（最高优先级）
 
@@ -202,8 +214,8 @@ python ~/.qoderwork/skills/Sloth-Sales-Eido/scripts/init_db.py
 
 ## 参考资料
 
-- 完整数据模型与字段说明：[reference.md](reference.md)
-- 用户交互示例：[examples.md](examples.md)
+- 完整数据模型与字段说明：[reference.md](references/reference.md)
+- 用户交互示例：[examples.md](references/examples.md)
 
 ## 可选依赖
 

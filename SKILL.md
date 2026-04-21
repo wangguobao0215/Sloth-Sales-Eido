@@ -50,17 +50,40 @@ python ~/.qoderwork/skills/Sloth-Sales-Eido/scripts/init_db.py
 
 然后逐步收集，每次只问 1-2 个问题：
 
-1. **角色确认**："欢迎使用 B2B 销售智能助理！A. 一线销售 B. 销售团队负责人"
-2. **目标市场**："您主要做哪个市场？A. 中国大陆（默认）B. 东南亚 / ASEAN C. 两者都有"
-   - 若含 B/C，激活东南亚文化日历与家族企业决策链模板，交互语言切换为英文（Southeast Asia mode）
-3. **产品类型**："您主要销售什么？A. 软件/SaaS B. 工业设备 C. 专业服务 D. 其他"
+1. **语言 & 角色**（合并为第一步）：
+   先问语言偏好，再问角色。输出格式：
+   > Welcome to B2B Sales AI Assistant! 欢迎使用 B2B 销售智能助理！
+   >
+   > First, choose your language / 请先选择语言：
+   > **A. 中文（默认）**
+   > **B. English**
+   - 若选 A（中文），继续用中文引导，接着问：
+     > "你的角色是？A. 一线销售 B. 销售团队负责人"
+   - 若选 B（English），**后续所有引导步骤和日常交互全部切换为英文**，接着问：
+     > "What is your role? A. Frontline Sales Rep  B. Sales Team Leader"
+   - 将 `language` 存入 user_preferences（值为 `zh` 或 `en`）
+2. **目标市场**：
+   - 中文模式："您主要做哪个市场？A. 中国大陆（默认）B. 东南亚 / ASEAN C. 两者都有"
+   - English模式："Which market do you primarily cover? A. China (default)  B. Southeast Asia / ASEAN  C. Both"
+   - 若含 B/C，激活东南亚文化日历与家族企业决策链模板
+   - 注意：语言由第 1 步决定，与目标市场独立。即使选中国大陆市场，也可以用英文交互；选东南亚市场也可以用中文交互。
+3. **产品类型**：
+   - 中文模式："您主要销售什么？A. 软件/SaaS B. 工业设备 C. 专业服务 D. 其他"
+   - English模式："What do you primarily sell? A. Software/SaaS  B. Industrial Equipment  C. Professional Services  D. Other"
    - 若选 A，激活软件行业知识库（ERP/MES/CRM；竞品：用友/金蝶/SAP）
    - 若选 B/C/D，引导设置采购品类关注字段
-4. **方法论偏好**："习惯哪种方法论？A. SPIN（默认）B. BANT C. MEDDIC"
-5. **数据导入**："有现成客户名单吗？A. 有，上传 Excel/CSV B. 没有，从零开始"
+4. **方法论偏好**：
+   - 中文模式："习惯哪种方法论？A. SPIN（默认）B. BANT C. MEDDIC"
+   - English模式："Which sales methodology do you prefer? A. SPIN (default)  B. BANT  C. MEDDIC"
+5. **数据导入**：
+   - 中文模式："有现成客户名单吗？A. 有，上传 Excel/CSV B. 没有，从零开始"
+   - English模式："Do you have an existing customer list? A. Yes, upload Excel/CSV  B. No, starting from scratch"
    - 若选 B，完成初始化后**必须主动提示**：
-     > 没问题！除了后续手动录入客户，你还可以随时让我帮你**挖掘客户**——告诉我目标区域、行业或规模，我来联网搜索潜在客户并补全信息。试试说："帮我找华东地区制造业的客户"
-6. **完成初始化**，存入 user_preferences。可说"修改我的偏好"修改。
+     - 中文：
+       > 没问题！除了后续手动录入客户，你还可以随时让我帮你**挖掘客户**——告诉我目标区域、行业或规模，我来联网搜索潜在客户并补全信息。试试说："帮我找华东地区制造业的客户"
+     - English：
+       > No problem! Besides manual entry, you can ask me to **mine prospects** anytime — just tell me the target region, industry, or company size, and I'll search online to find and enrich potential customers. Try saying: "Find me manufacturing companies in Thailand"
+6. **完成初始化**，存入 user_preferences（含 language 字段）。可说"修改我的偏好" / "Change my preferences" 修改。
 
 ## 每日聚焦引擎（Daily Focus）【v5.0 核心 · 最高优先级】
 

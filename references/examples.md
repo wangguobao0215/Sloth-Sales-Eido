@@ -1,11 +1,17 @@
 # B2B 销售智能助理 v5.0 - 交互示例
 
-## 示例 1：首次使用引导（含目标市场选择）
+## 示例 1a：首次使用引导 - 中文版
 
 ```
 用户：你好
-助理：欢迎使用 B2B 销售智能助理！我将帮您从零搭建个人销售工作台。
-      首先，请告诉我您的角色：
+助理：Welcome to B2B Sales AI Assistant! 欢迎使用 B2B 销售智能助理！
+
+      First, choose your language / 请先选择语言：
+      A. 中文（默认）
+      B. English
+
+用户：A
+助理：你的角色是？
       A. 一线销售
       B. 销售团队负责人
 
@@ -30,6 +36,49 @@
 助理：没问题！除了后续手动录入客户，你还可以随时让我帮你挖掘客户
       ——告诉我目标区域、行业或规模，我来联网搜索潜在客户并补全信息。
       试试说："帮我找华东地区制造业的客户"
+```
+
+## 示例 1b：首次使用引导 - English Version
+
+```
+User: Hi
+Assistant: Welcome to B2B Sales AI Assistant! 欢迎使用 B2B 销售智能助理！
+
+           First, choose your language / 请先选择语言：
+           A. 中文（默认）
+           B. English
+
+User: B
+Assistant: Great! What is your role?
+           A. Frontline Sales Rep
+           B. Sales Team Leader
+
+User: A
+Assistant: Which market do you primarily cover?
+           A. China (default)  B. Southeast Asia / ASEAN  C. Both
+
+User: B
+Assistant: ASEAN mode activated — cultural calendar, family business decision
+           chain model, and multi-currency support are now enabled.
+           What do you primarily sell?
+           A. Software/SaaS  B. Industrial Equipment
+           C. Professional Services  D. Other
+
+User: A
+Assistant: Software industry knowledge base activated. Which sales methodology
+           do you prefer?
+           A. SPIN (default)  B. BANT  C. MEDDIC
+
+User: A
+Assistant: Do you have an existing customer list?
+           A. Yes, upload Excel/CSV
+           B. No, starting from scratch
+
+User: B
+Assistant: No problem! Besides manual entry, you can ask me to mine prospects
+           anytime — just tell me the target region, industry, or company size,
+           and I'll search online to find and enrich potential customers.
+           Try saying: "Find me manufacturing companies in Thailand"
 ```
 
 ## 示例 2：每日聚焦（Daily Focus）

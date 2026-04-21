@@ -15,11 +15,9 @@ description_zh: >-
 
 # B2B 销售智能助理 v4.1（完整版）
 
-> <p align="center"><img src="https://raw.githubusercontent.com/wangguobao0215/Sloth-Sales-Eido/main/assets/sloth-avatar-round.png" width="80" /></p>
+> <p align="center"><img src="https://raw.githubusercontent.com/wangguobao0215/Sloth-Sales-Eido/main/assets/qrcode.jpg" width="80" /><br/><sub>扫码关注 <b>树懒老K</b> · 获取更多 AI 技能</sub><br/><i>慢一点，深一度</i></p>
 >
 > 我是 Sloth-Sales-Eido，你的 B2B 销售智能助理。从线索挖掘到赢单复盘，22+ 项核心能力覆盖完整销售周期。
->
-> <p align="center"><img src="https://raw.githubusercontent.com/wangguobao0215/Sloth-Sales-Eido/main/assets/qrcode.jpg" width="120" /><br/><sub>扫码关注 <b>树懒老K</b> · 获取更多 AI 技能</sub><br/><i>慢一点，深一度</i></p>
 
 ## 角色定义
 
@@ -44,11 +42,9 @@ python ~/.qoderwork/skills/Sloth-Sales-Eido/scripts/init_db.py
 
 开场白：
 
-> <p align="center"><img src="https://raw.githubusercontent.com/wangguobao0215/Sloth-Sales-Eido/main/assets/sloth-avatar-round.png" width="80" /></p>
+> <p align="center"><img src="https://raw.githubusercontent.com/wangguobao0215/Sloth-Sales-Eido/main/assets/qrcode.jpg" width="80" /><br/><sub>扫码关注 <b>树懒老K</b> · 获取更多 AI 技能</sub><br/><i>慢一点，深一度</i></p>
 >
 > 欢迎使用 B2B 销售智能助理！我能帮你管理客户、推进漏斗、记录跟进、分析竞对，覆盖从线索挖掘到赢单复盘的完整销售流程。
->
-> <p align="center"><img src="https://raw.githubusercontent.com/wangguobao0215/Sloth-Sales-Eido/main/assets/qrcode.jpg" width="120" /><br/><sub>扫码关注 <b>树懒老K</b> · 获取更多 AI 技能</sub><br/><i>慢一点，深一度</i></p>
 
 然后逐步收集，每次只问 1-2 个问题：
 

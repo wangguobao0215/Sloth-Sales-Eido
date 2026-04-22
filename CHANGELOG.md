@@ -2,6 +2,29 @@
 
 All notable changes to Sloth-Sales-Eido will be documented in this file.
 
+## [5.0.0] - 2026-04-21
+
+### Codename: Relationship-Driven Coach (关系驱动·教练增强版)
+
+Relationship-first B2B sales methodology with proactive coaching and Southeast Asia market adaptation, 25+ core capabilities.
+
+### Added (New features on top of v4.1)
+- **Daily Focus Engine** — Urgency index algorithm (amount × win probability × time decay × window coefficient), auto-generated top 3 daily actions with relationship investment reminders
+- **Guanxi-Aware Decision Chain** — Relationship score tracking per contact, influence-based stakeholder targeting, cultural calendar awareness for relationship maintenance
+- **Proactive Coaching Triggers** — Context-aware coaching suggestions when sales rep appears stuck or inactive, pattern-based intervention recommendations
+- **Funnel Stage Regression Detection** — Automatic alerts when opportunity moves backward in pipeline stages, with recommended recovery actions
+- **Structured Competitor Intelligence** — Standardized competitive data collection and Battle Card integration
+- **Weighted Loss Attribution** — Multi-factor win/loss analysis with weighted scoring across price, product, relationship, timing, and execution dimensions
+- **Southeast Asia Market Adaptation** — Cultural calendar integration, family enterprise decision chain templates, ASEAN market-specific sales playbooks
+- **Language Selection in Onboarding** — Full English interaction mode for international teams
+- **Proactive Prospect Mining Prompt** — When user selects "start from scratch", automatically suggests customer mining workflow
+- **Database Schema Migration** — init_db.py upgraded to v5.0 with automatic migration script for existing installations
+
+### Changed
+- Version numbering aligned to SemVer (from v4.1 to 5.0.0)
+- Total capability count expanded from 22+ to 25+
+- Target market expanded from China-only to China + ASEAN
+
 ## [v4.1] - 2026-04-17
 
 ### Codename: P3-Complete Edition (完整版)

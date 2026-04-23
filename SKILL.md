@@ -1,5 +1,5 @@
 ---
-name: Sloth-Sales-Eido
+name: sloth-sales-eido
 version: 5.0.0
 description: >-
   B2B sales AI assistant (v5.0) covering the complete sales cycle with
@@ -7,7 +7,9 @@ description: >-
   decision chain, proactive coaching triggers, funnel stage regression,
   structured competitor intelligence, weighted loss attribution, and
   Southeast Asia market adaptation. 25+ core capabilities for China and
-  ASEAN B2B sales. Use for any B2B sales-related work.
+  ASEAN B2B sales. Use for any B2B sales-related work. Use when managing B2B
+  customer relationships, tracking sales pipeline, recording sales activities,
+  applying sales methodologies, or generating win/loss analysis reports.
 description_zh: >-
   B2B 销售智能助理 v5.0：关系驱动 + 每日聚焦 + 主动教练，25+ 项核心能力覆盖中国及东南亚市场完整销售周期。
 ---

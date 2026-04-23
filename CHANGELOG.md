@@ -25,7 +25,7 @@ Relationship-first B2B sales methodology with proactive coaching and Southeast A
 - Total capability count expanded from 22+ to 25+
 - Target market expanded from China-only to China + ASEAN
 
-## [v4.1] - 2026-04-17
+## [4.1] - 2026-04-17
 
 ### Codename: P3-Complete Edition (完整版)
 
@@ -45,7 +45,7 @@ Complete B2B sales intelligent assistant covering the full sales cycle from lead
 - All 4 Intelligent Enhancement features from v2.0
 - All 7 Analysis & Competition features from v3.0
 
-## [v3.1] - 2026-04-16
+## [3.1] - 2026-04-16
 
 ### Codename: P2-Analysis & Competition (分析竞争)
 
@@ -60,7 +60,7 @@ Enhanced with competitive analysis and intelligent diagnostics, 16 total feature
 - Decision-Maker Role-Based Communication
 - Personal Performance Dashboard & Behavioral Feedback
 
-## [v2.1] - 2026-04-16
+## [2.1] - 2026-04-16
 
 ### Codename: P1-Smart Enhancement (智能增强)
 
@@ -72,7 +72,7 @@ Smart enhancement edition with AI-powered preparation and meeting processing, 9 
 - Meeting Minutes Smart Processing
 - Key Date & Compliance Reminders
 
-## [v1.1] - 2026-04-16
+## [1.1] - 2026-04-16
 
 ### Codename: P0-Core CRM (核心CRM)
 

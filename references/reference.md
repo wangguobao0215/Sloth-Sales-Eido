@@ -110,7 +110,7 @@
 | stage_history | TEXT (JSON) | 阶段变更历史（v5.0新增，见下方） |
 | probability | INTEGER | 赢单概率 % |
 | estimated_deal_value | REAL | 预估金额（万元） |
-| deal_currency | TEXT | 币种，默认CNY（v5.0新增，ASEAN模式用） |
+| deal_currency | TEXT | 币种，默认 CNY（v5.0 新增，ASEAN 模式用；未填写时默认 CNY） |
 | payment_terms | TEXT | 付款条件（v5.0新增，如 TT/LC/OA） |
 | next_action | TEXT | 下一步计划 |
 | next_contact_date | TEXT | 下次跟进日期 |
@@ -307,3 +307,8 @@ v5.0 改用加权模型，核心维度按重要性分配权重：
 | 窗口系数 | Stalled 标记 | 1.5 |
 
 取 Top 3 输出，附加1条关系投资提醒（从决策链中挑 relationship_score 最低但 influence ≥ 4 的人）。
+
+**同分排序规则：** 若多个商机紧迫度相同，按以下优先级排序：
+1. 预估金额降序（金额高的优先）
+2. 健康度降序（健康分高的优先）
+3. 最近活动时间升序（久未跟进的优先）

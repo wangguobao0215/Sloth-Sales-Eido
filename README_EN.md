@@ -4,11 +4,15 @@
 
 The full edition of the B2B Sales Intelligent Assistant covers the complete sales process from lead mining to win/loss review, featuring 22+ core capabilities. Building on the Analysis & Competition edition, it adds Win/Loss Review & Handover, Customer News & Sentiment Monitoring, Benchmark Case Smart Matching, Industry Policy & Incentive Alerts, Case Library Management, and Sales Team Leader Functions.
 
+## Documentation
+
+- User Guide: [user-guide.md](references/user-guide.md)
+
 ## Version Information
 
 | Item | Details |
 |------|---------|
-| Version | v4.1 |
+| Version | v4.1.0 |
 | Codename | P3-Full Edition |
 | Release Stage | General Availability |
 | Skill Name | `Sloth-Sales-Eido` |

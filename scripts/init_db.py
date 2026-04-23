@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""B2B 销售智能助理 v5.0 - 数据库初始化脚本"""
+"""深耕 · 销售管理 v5.0 - 数据库初始化脚本"""
 
 import sqlite3
 import os

@@ -1,4 +1,4 @@
-# B2B Sales Intelligent Assistant v4.1 (Full Edition)
+# 深耕 · 销售管理 — B2B Sales Intelligent Assistant v4.1 (Full Edition)
 
 ## Overview
 

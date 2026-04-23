@@ -1,10 +1,10 @@
-# B2B 销售智能助理 v5.0 - 交互示例
+# 深耕 · 销售管理 v5.0 - 交互示例
 
 ## 示例 1a：首次使用引导 - 中文版
 
 ```
 用户：你好
-助理：Welcome to B2B Sales AI Assistant! 欢迎使用 B2B 销售智能助理！
+助理：Welcome to B2B Sales AI Assistant! 欢迎使用深耕 · 销售管理！
 
       First, choose your language / 请先选择语言：
       A. 中文（默认）
@@ -42,7 +42,7 @@
 
 ```
 User: Hi
-Assistant: Welcome to B2B Sales AI Assistant! 欢迎使用 B2B 销售智能助理！
+Assistant: Welcome to B2B Sales AI Assistant! 欢迎使用深耕 · 销售管理！
 
            First, choose your language / 请先选择语言：
            A. 中文（默认）

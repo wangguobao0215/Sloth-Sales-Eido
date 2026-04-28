@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>深耕 · 销售管理 v5.0 宣传海报</title>
+<style>
+  @page { size: A4 portrait; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  .poster {
+    width: 210mm;
+    min-height: 297mm;
+    background: #fff;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+  }
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, #1a2a4a 0%, #2d4a7c 60%, #1a2a4a 100%);
+    color: #fff;
+    padding: 36px 40px 28px;
+    position: relative;
+  }
+  .header::after {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: #fff;
+    clip-path: ellipse(70% 100% at 50% 0%);
+  }
+  .brand-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 1;
+  }
+  .brand {
+    font-size: 13px;
+    letter-spacing: 2px;
+    opacity: 0.85;
+    text-transform: uppercase;
+  }
+  .version-badge {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  .title {
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+  }
+  .title span {
+    color: #7ec8e3;
+  }
+  .subtitle {
+    font-size: 18px;
+    opacity: 0.9;
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+  }
+  .tagline {
+    margin-top: 16px;
+    display: flex;
+    gap: 12px;
+    position: relative;
+    z-index: 1;
+  }
+  .tag {
+    background: rgba(126,200,227,0.2);
+    border: 1px solid rgba(126,200,227,0.4);
+    color: #7ec8e3;
+    padding: 5px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  /* Body */
+  .body {
+    padding: 30px 40px 20px;
+  }
+  .section-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a2a4a;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title::before {
+    content: "";
+    width: 5px;
+    height: 22px;
+    background: #2d4a7c;
+    border-radius: 3px;
+  }
+
+  /* Highlights grid */
+  .highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+  .card {
+    background: #f8fafc;
+    border: 1px solid #e8ecf1;
+    border-radius: 10px;
+    padding: 16px 18px;
+    transition: transform 0.2s;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    border-color: #c5d5e8;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .card-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #2d4a7c, #1a2a4a);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a2a4a;
+  }
+  .card-desc {
+    font-size: 13px;
+    color: #55667a;
+    line-height: 1.6;
+  }
+
+  /* Scenarios */
+  .scenarios {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 22px;
+  }
+  .scenario {
+    background: #eef2f7;
+    color: #2d4a7c;
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  /* Stats bar */
+  .stats-bar {
+    display: flex;
+    justify-content: space-around;
+    background: linear-gradient(135deg, #1a2a4a, #2d4a7c);
+    color: #fff;
+    padding: 22px 20px;
+    border-radius: 12px;
+    margin-bottom: 22px;
+    text-align: center;
+  }
+  .stat-number {
+    font-size: 32px;
+    font-weight: 800;
+    color: #7ec8e3;
+  }
+  .stat-label {
+    font-size: 13px;
+    opacity: 0.85;
+    margin-top: 4px;
+  }
+
+  /* CTA */
+  .cta-section {
+    background: #f0f5fa;
+    border: 2px dashed #2d4a7c;
+    border-radius: 12px;
+    padding: 22px 24px;
+    text-align: center;
+    margin-bottom: 18px;
+  }
+  .cta-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a2a4a;
+    margin-bottom: 10px;
+  }
+  .cta-steps {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  .cta-step {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #2d4a7c;
+    font-weight: 600;
+  }
+  .cta-step-num {
+    width: 26px;
+    height: 26px;
+    background: #2d4a7c;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  /* Footer */
+  .footer {
+    background: #1a2a4a;
+    color: #fff;
+    padding: 18px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+  .footer-brand {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .footer-slogan {
+    font-size: 12px;
+    opacity: 0.7;
+    font-style: italic;
+  }
+  .footer-contact {
+    font-size: 12px;
+    opacity: 0.8;
+    text-align: right;
+  }
+
+  /* Print */
+  @media print {
+    body { background: #fff; padding: 0; }
+    .poster { box-shadow: none; width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="poster">
+  <!-- Header -->
+  <div class="header">
+    <div class="brand-row">
+      <div class="brand">Sloth-Eido Skill Family</div>
+      <div class="version-badge">v5.0.0 正式版</div>
+    </div>
+    <div class="title">深耕 · <span>销售管理</span></div>
+    <div class="subtitle">你的 AI 销售教练 —— 从线索挖掘到赢单复盘，覆盖完整 B2B 销售周期</div>
+    <div class="tagline">
+      <span class="tag">关系驱动</span>
+      <span class="tag">每日聚焦</span>
+      <span class="tag">主动教练</span>
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div class="body">
+
+    <!-- Stats -->
+    <div class="stats-bar">
+      <div>
+        <div class="stat-number">25+</div>
+        <div class="stat-label">核心销售能力</div>
+      </div>
+      <div>
+        <div class="stat-number">3</div>
+        <div class="stat-label">销售方法论</div>
+      </div>
+      <div>
+        <div class="stat-number">0</div>
+        <div class="stat-label">额外学习成本</div>
+      </div>
+    </div>
+
+    <!-- Highlights -->
+    <div class="section-title">核心能力</div>
+    <div class="highlights">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">&#127919;</div>
+          <div class="card-title">每日聚焦引擎</div>
+        </div>
+        <div class="card-desc">每天早上自动算出 Top 3 最该跟进的商机，并提醒你该做什么。帮销售做减法比做加法更有价值。</div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">&#128101;</div>
+          <div class="card-title">关系驱动管理</div>
+        </div>
+        <div class="card-desc">在中国和东南亚市场，信任先于交易。系统追踪决策链中每个人的关系温度，提醒你何时该做一次"非业务触达"。</div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">&#128200;</div>
+          <div class="card-title">商机健康度评分</div>
+        </div>
+        <div class="card-desc">多维度计算每个商机的健康分（0-100），自动标注"待复活客户"，卡住的项目一键诊断阻力点并给出突破建议。</div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">&#128241;</div>
+          <div class="card-title">智能拜访准备</div>
+        </div>
+        <div class="card-desc">输入客户名，AI 自动生成一页纸简报：公司动态、决策链背景、当前方案痛点、定制化提问清单、最佳案例匹配。</div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">&#128172;</div>
+          <div class="card-title">竞品应对话术</div>
+        </div>
+        <div class="card-desc">基于客户情况和全网社交媒体舆情，生成结构化应对话术：认同 + 差异化 + 风险 + 案例 + 邀约。支持用友 / SAP 等竞品。</div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">&#128202;</div>
+          <div class="card-title">赢单 / 输单复盘</div>
+        </div>
+        <div class="card-desc">赢单时生成交接清单，输单时沉淀加权归因（价格 / 功能 / 关系 / 内部政治），自动提醒相似客户"上次栽在哪，这次别踩坑"。</div>
+      </div>
+    </div>
+
+    <!-- Scenarios -->
+    <div class="section-title">适合谁用</div>
+    <div class="scenarios">
+      <span class="scenario">一线销售代表</span>
+      <span class="scenario">销售团队负责人</span>
+      <span class="scenario">售前顾问</span>
+      <span class="scenario">客户成功经理</span>
+      <span class="scenario">ERP / SaaS 销售</span>
+      <span class="scenario">工业设备销售</span>
+      <span class="scenario">东南亚市场拓展</span>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-section">
+      <div class="cta-title">三步开始试用</div>
+      <div class="cta-steps">
+        <div class="cta-step"><span class="cta-step-num">1</span>在 QoderWork 安装 Sloth-Sales-Eido 技能</div>
+        <div class="cta-step"><span class="cta-step-num">2</span>回答 5 个初始化问题（语言 / 市场 / 产品 / 方法论）</div>
+        <div class="cta-step"><span class="cta-step-num">3</span>说"今天该做什么"，体验每日聚焦引擎</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div>
+      <div class="footer-brand">树懒老K · Sloth-Eido 技能家族</div>
+      <div class="footer-slogan">慢一点，深一度</div>
+    </div>
+    <div class="footer-contact">
+      扫码关注公众号「树懒老K」<br>
+      获取更多 AI 销售技能与实战案例
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

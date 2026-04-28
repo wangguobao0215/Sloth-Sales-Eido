@@ -1,8 +1,18 @@
+<p align="center">
+  <img src="assets/sloth-avatar-round.png" width="120" />
+</p>
+
 # 深耕 · 销售管理 — B2B Sales Intelligent Assistant v4.1 (Full Edition)
 
 ## Overview
 
 The full edition of the B2B Sales Intelligent Assistant covers the complete sales process from lead mining to win/loss review, featuring 22+ core capabilities. Building on the Analysis & Competition edition, it adds Win/Loss Review & Handover, Customer News & Sentiment Monitoring, Benchmark Case Smart Matching, Industry Policy & Incentive Alerts, Case Library Management, and Sales Team Leader Functions.
+
+<p align="center">
+  <img src="assets/qrcode.jpg" width="140" /><br/>
+  <sub>扫码关注 <strong>树懒老K</strong> · 获取更多 AI 技能</sub><br/>
+  <em>慢一点，深一度</em>
+</p>
 
 ## Documentation
 

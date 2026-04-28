@@ -267,10 +267,30 @@
     opacity: 0.7;
     font-style: italic;
   }
+  .footer-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .footer-qr {
+    width: 64px;
+    height: 64px;
+    border-radius: 6px;
+    background: #fff;
+    padding: 3px;
+    flex-shrink: 0;
+  }
+  .footer-qr img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+  }
   .footer-contact {
     font-size: 12px;
     opacity: 0.8;
     text-align: right;
+    line-height: 1.6;
   }
 
   /* Print */
@@ -380,7 +400,7 @@
     <div class="cta-section">
       <div class="cta-title">三步开始试用</div>
       <div class="cta-steps">
-        <div class="cta-step"><span class="cta-step-num">1</span>在 QoderWork 安装 Sloth-Sales-Eido 技能</div>
+        <div class="cta-step"><span class="cta-step-num">1</span>在各种虾🦐安装 Sloth-Sales-Eido 技能</div>
         <div class="cta-step"><span class="cta-step-num">2</span>回答 5 个初始化问题（语言 / 市场 / 产品 / 方法论）</div>
         <div class="cta-step"><span class="cta-step-num">3</span>说"今天该做什么"，体验每日聚焦引擎</div>
       </div>
@@ -394,9 +414,14 @@
       <div class="footer-brand">树懒老K · Sloth-Eido 技能家族</div>
       <div class="footer-slogan">慢一点，深一度</div>
     </div>
-    <div class="footer-contact">
-      扫码关注公众号「树懒老K」<br>
-      获取更多 AI 销售技能与实战案例
+    <div class="footer-right">
+      <div class="footer-qr">
+        <img src="assets/qrcode.jpg" alt="公众号二维码">
+      </div>
+      <div class="footer-contact">
+        扫码关注公众号「树懒老K」<br>
+        获取更多 AI 销售技能与实战案例
+      </div>
     </div>
   </div>
 </div>

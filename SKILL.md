@@ -391,3 +391,18 @@ ASEAN 模式下的语言切换默认行为：
 - **文化日历输出**：无论语言设置如何，文化日历提醒（Ramadan/Songkran 等）均使用 English + 当地语言双语显示
 - **决策链模板**：家族企业决策链字段（Patriarch/Next-Gen/Trusted Advisor/Professional Manager）在 English 模式下显示英文，在中文模式下显示"家族掌门/新生代/亲信顾问/职业经理人"
 - **关键术语**：多币种、付款条款（L/C, TT, O/A）等商务术语保持英文原文，附加中文解释
+
+
+---
+
+## Hub 集成（可选）
+
+当 EXTEND.md 中 `knowledge_hub.enabled = true` 时，本 Skill 启用中央知识库集成。
+
+详细的结晶点和需求点定义见 `modules/knowledge-hub-bridge.md`。
+
+### 行为变化
+
+1. **知识结晶点**：在指定操作完成后，强制执行知识萃取并写入中央库。
+2. **知识需求点**：在指定操作启动时，强制查询中央库并展示推荐。
+3. 当 `enabled = false` 时，以上行为全部跳过，Skill 独立运行。
